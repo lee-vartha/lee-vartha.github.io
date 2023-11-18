@@ -1,0 +1,2522 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lee Vartha's Design</title>
+        <link rel="stylesheet" href="/src/website.css">
+        <link rel="icon" href="images/questionButton.png" sizes="120x120" type="image/x-icon">
+            <!--SEO optimisation tags-->
+        <meta name="description" content="Lee Vartha's arts portfolio website displaying skills and projects.">
+        <meta name="keywords" content="Lee Vartha, art portfolio, music portfolio, portfolio website">
+        <meta name="author" content="Lee Vartha">
+    </head>
+
+
+    <body>
+
+        <!-- the nav menu -->
+        <input type="checkbox" id="navcheck" role="button" title="menu">
+        <label for="navcheck" aria-hidden="true" title="menu!!!">
+            <span class="burger">
+                <span class="bar">
+                    <span class="visuallyhidden"></span>
+                </span>
+            </span>
+        </label>
+        <!-- the menu navigation buttons -->
+        <nav id="menu">
+            <a href="#main-page" onclick="showContent('main-page')"><img src="images/hhome.png" alt="Main Page in the Website" class="buttons"></a>
+            <a href="#about-me" onclick="showContent('about-me')"><img src="images/about.png" alt="About Page in the Website" class="buttons"></a>
+            <a href="#explore-page" onclick="showContent('proj/skill')"><img src="images/explore.png" alt="Projects and Skills in the Website" class="buttons"></a>
+            <a href="#question" onclick="showContent('question')"><img src="images/question.png" alt="Contact Form for the Website" class="buttons"></a>
+            <a href="#account"><img src="images/user.png" alt="Sign Up Form for the Website" id="accountButton" class="signup-button"></a>
+        </nav>
+
+        <!-- the top header -->
+        <div class="top-header">
+            <img src="images/buttonstring.png" onclick="showContent('main-page')" class="image-buttonstring">            
+        </div>
+
+        <main>
+
+        <!-- The Sign Up Page -->
+        <section id="sign-up">
+                <div class="sign-container">
+                    <div class="top-page-text-register">
+                        <img src="images/register-title.png" class="image-register-title">
+                            <div id="signup-container">
+                                <form method="post" id="signUpForm">                
+                                    <label for="upEmailInput"></label>
+                                    <input id="upEmailInput" type="email" placeholder="My e-mail is ..." name="email" autocomplete="email" required>
+                
+
+                                    <label for="upPasswordInput"></label>
+                                    <input id="upPasswordInput" type="password" placeholder="My password will be ..." name="password"  required>
+                                    <br/>
+
+                                    <div class="signUpSubmit">
+
+                                        
+                                        <button id="signUpSubmit" onclick="signUp()" type="submit">Sign Up</button>
+                                        <div class="up-loading-bar" id="uploadingBar"></div>
+
+                                    </div>
+        
+                                    <!-- <input id="signUpSubmit" onclick="replaceButton()" type="submit" value="Sign Up" > -->
+                                </form>
+                            </div>
+                            <button onclick="showContent('sign-in')" id="sign-in-button">Already have an account? Sign in here!</button>
+                    </div>
+                </div>
+        </section>
+        
+
+        <section id="sign-in">
+            <div class="sign-container">
+                <div class="top-page-text-signin">
+                    <img src="images/sign-title.png" class="image-signin-title"> <!--must change this to sign in-->
+                        <div id="signin-container">
+                            <form method="post" id="signInForm">            
+                                <label for="inEmailInput"></label>
+                                <input id="inEmailInput" type="email" placeholder="My e-mail is ..." name="email" autocomplete="email" required>
+            
+                                <label for="inPasswordInput"></label>
+                                <input id="inPasswordInput" type="password" placeholder="My password is ..." name="password" required>
+                        
+                                <input id="signInSubmit" onclick="signIn(event)" type="submit" value="Sign In">
+                                <div class="in-loading-bar" id="inloadingBar"></div>
+                            </form>
+                        </div>
+                        <button onclick="showContent('sign-up')" id="sign-up-button">Don't have an account? Sign up here!</button>
+                </div>
+            </div>
+    </section>
+
+    <section id="account">
+        <div class="account">
+            <img src="images/ur-acc.png" class="ur-acc">
+            <div class="top-page-text-user1">
+                <div class="circle"></div>
+                
+                <div class="top-page-text-user">
+                    <h3 id="userEmailDisplay">EmailPlaceholder</h3> <!-- Display user email -->
+                </div>
+                <div class="top-page-text-user2">
+                </div>
+                <div class="top-page-text-umai">
+                    <h3>liked</h3>
+                </div>
+                <div class="top-page-text-umai1">
+                    <h3>saved</h3>
+                </div>
+                <div class="top-page-text-umai2">
+                    <h3>-----</h3>
+                </div>
+                <div class="top-page-text-umai3">
+                    <h3>-----</h3>
+                </div>
+                <div class="top-page-text-umai4">
+                    <h3>settings</h3>
+                </div>
+            </div>
+            <br>
+            <a href="#sign-out" id="signOutButton" onclick="signOut()">
+                <img src="images/signout.png" alt="Sign Out Button for the Website" class="signout">
+            </a>
+        </div>
+    </section>
+    
+        
+        
+<!-- THE QUESTION PAGE-->
+<section id="question">
+    <div class="question">
+        <div class="top-page-text-contact">
+            <img src="images/contact.png" class="contacttext">
+          
+            <div id="contact-container">
+                <form method="post" id="contactForm" class="add">
+               
+                    <label for="cNameInput"></label>
+                    <input id="cNameInput" type="text" placeholder="My name is..." name="name" autocomplete="name" required>
+                    <label for="cEmailInput"></label>
+                    <input id="cEmailInput" type="email" placeholder="My e-mail is..." name="email" autocomplete="email" required>
+                
+                    <label for="cMessageInput"></label>
+                    <textarea id="cMessageInput" name="message" placeholder="I'd like to chat about..."  cols="30" rows="5" required></textarea>
+                 
+                    <button id="contactSubmit" onclick="contactSubmit(event)" type="submit">Send</button>
+                    <div class="contact-loading-bar" id="cloadingBar"></div>
+                </form>
+              </div>
+        </div>
+    </div>
+    <div class="icons-bottom">
+        <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram Link"></a></li>
+        <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="Linkedin Link"></a>
+        <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="Github Link"></a>    
+    </div>
+</section>
+
+        <!-- THE MAIN PAGE -->
+        <section id="main-page">
+            <div class="main-page">
+                <img src="images/Lee.png" class="main-image1">                   
+            </div>
+            <img src="images/three.png" class="line-bird">
+            <br>
+                
+        <!-- The Search Bar -->
+            <div class="search">
+                <form>
+                    <input type="text" placeholder="Search..." class="search-input" id="search">
+                    <i class="fas fa-search"></i>
+                </form>
+            </div>
+
+        <!-- "My Work" Preview -->
+            <div class="top-page-text-main">
+                <img src="images/mywork.png"class="main-image2">
+                    <div class="panning-container">
+                        <div class="panning-images">
+                            <img src="print2022/lay.png" class="main-image3">  
+                            <img src="print2022/swirlnest.PNG" class="main-image4">             
+                            <img src="print2022/collage.PNG" class="main-image5">                       
+                            <img src="print2022/treepaper.png" class="main-image6">                       
+                            <img src="print2022/bird_nest (1).png" class="main-image7">    
+                            <img src="print2022/lay.png" class="main-image3">  
+                            <img src="print2022/swirlnest.PNG" class="main-image4">             
+                            <img src="print2022/collage.PNG" class="main-image5">                       
+                            <img src="print2022/treepaper.png" class="main-image6">                       
+                            <img src="print2022/bird_nest (1).png" class="main-image7">    
+                            <img src="print2022/lay.png" class="main-image3">  
+                            <img src="print2022/swirlnest.PNG" class="main-image4">             
+                            <img src="print2022/collage.PNG" class="main-image5">                       
+                            <img src="print2022/treepaper.png" class="main-image6">                       
+                            <img src="print2022/bird_nest (1).png" class="main-image7">    
+                        </div>
+                    </div>
+                <button id="learn-button" onclick="showContent('proj/skill')" class="learn-button">Learn More</button>
+            </div>  
+
+            <img src="images/break.png" class="break">                       
+
+        <!-- Short "About Me" -->
+            <div class="top-page-text-main-about">
+                <img src="images/aboutme.png"  class="main-image2">
+                    <div class="portrait-aboutme">
+                        <img src="images/portrait.png" alt="portrait" class="portrait-aboutme">
+                    </div>
+                    <br>
+                    <div class="top-page-text-main-sm">
+                        <h3>Hello! My name is Lee Vartha, a 19 year old artist, musician and student based in Nelson, New Zealand. 
+                            <br>
+                            <br>
+                            I am currently working towards a Bachelor of Information Technology and am working towards a career in the IT industry, 
+                            as well as continuing with my expertise in the Arts.
+                            <br>                        
+                        </h3>
+                    </div>
+                <button id="learn-button" onclick="showContent('about-me')" class="learn-button-about">Learn More</button>
+            </div>
+
+            <img src="images/break.png" class="break">     
+
+        <!-- My Social Media Icons-->
+            <div class="icons-bottom">
+                <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram Link"></a></li>
+                <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="Linkedin Link"></a>
+                <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="Github Link"></a>    
+            </div>
+        </section>
+
+           
+
+        <!-- THE ABOUT ME PAGE-->
+        <section id="about-me">
+            <div class="about-me">
+                <img src="images/aboutme.png" class="about-title">
+                    <div class="top-page-text-about">
+                            <div class="top-page-text-sm">
+                                <h3>Hello! My name is Lee Vartha, an 18 year old artist, musician and student based in Nelson, New Zealand. 
+                                    <br>
+                                    <br>
+                                    I am currently working towards a Bachelor of Information Technology and am working towards a career in the IT industry,
+                                    as well as continuing with my expertise in the Arts.
+                                    <br>
+                                    <br>My work with the arts has been recognized with awards such as:
+                                    <br>
+                                    The 'Rainey Cup of Original Music Composition' in Highschool
+                                    <br>
+                                    The prize for 'Outstanding Involvement in the Arts' in Highschool.
+                                    <br>
+                                    As a musician, my stage name is Jinksy Crow and I have been seen going around Nelson performing my usual gigs at bars and some cafes.
+                                    <br>
+                                </h3>
+                            </div>
+                        <div class="portrait-about-me">
+                            <img src="images/portrait.png" class="portrait-aboutme">
+                        </div>
+                    </div>
+                   
+        <!-- The social media icon buttons -->      
+            <div class="icons">
+                <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram Link"></a></li>
+                <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="Linkedin Link"></a>
+                <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="Github Link"></a>    
+            </div>
+            </div>
+
+                   
+        <!-- Stuff about my contribution -->
+
+                <img src="bird/singlemiddle-left.png" class="line-bird">
+                    <div class="top-page-text-edu"> 
+                        <img src="images/edu.png" class="edu-title">
+                            <br>
+                                <h4>2017-2022 - Nelson College for Girls</h4>
+                                
+                                <h4>2023-2025 - Nelson Marlborough Institute of Technology</h4>
+                            <br>
+                        <button id="2021-button" class="the-2021-button">2021</button>
+                                <h4>- Level 2 NCEA with Excellence Endorsement </h4>
+                        
+                        <button id="2022-button" class="the-2022-button">2022</button>
+                                <h4>- Level 3 NCEA with Merit Endorsement </h4>
+                                <h4>- Level 3 NCEA University Entrance </h4>
+                                <h4>- Year 13 Art Design with Achieved Endorsement </h4>
+                                <h4>- Year 13 Photography with Achieved Endorsement </h4>
+                                <h4>- Year 13 Digital Technologies with Achieved Endorsement </h4>
+
+                        <button id="2023-button"  class="the-2023-button">2023</button>
+                                <h4>- Bachelor of Information Technology [2023-2025]</h4>
+                            <br>
+                    </div>
+
+                <img src="bird/singlemiddle.png" class="line-bird">
+
+        <!-- Stuff about my contribution -->
+                    <div class="contribution-stuff">
+                        <div class="top-page-text-con"> 
+                            <img src="images/cont.png" class="cont-title">
+                            <br>
+                            <br>
+                        <button id="2022-button" class="the-2022-button">2017-2018</button>
+                                <h4>- Nelson Junior Orchestra [For Cello]</h4>
+                        <button id="2022-button" class="the-2022-button">2019-2020</button>
+                                <h4>- Nelson Senior Orchestra [For Cello]</h4>
+                        <button id="2022-button" class="the-2022-button">2021-2022</button>
+                                <h4>- NCG String Orchestra - Archi Con Legni </h4>
+                                <h4>- NCG Choir </h4>                           
+                        </div>
+                    </div>
+
+
+                    <br>
+                <img src="bird/singleright.png"  class="line-bird">
+
+
+                    <!-- The stuff about all my achievements -->
+                    <div class="top-page-text-ach">
+                        <img src="images/ach.png"  class="ach-title">
+
+                        <button id="ncea-button" class="ncea-button">NCEA</button>
+                            <br>
+                        <button id="2021-button"  alt="2021" class="the-2021-button">2021</button>
+                                <h4>- Year 12 - Rainey Cup for Original Music Composition </h4>
+                                <h6>This was because I had shown contribution in my music class by constantly creating my own original compositions.
+                            <br> The school mustve recognised that. </h6>
+                                <h4>- Year 12 - Service Colours Music </h4>
+                                <h6> This is from the fact that I had contributed in school orchestra and choir, alongside being in the music class. 
+                            <br>This is just an acknowledgement of such. </h6>
+
+                        <button id="2022-button" class="the-2022-button">2022</button>
+                                <h4>- Scholarship Awards - Nelson Marlborough Institute of Technology Student Award </h4>
+                                <h6> This let me gain $1000 towards my course fees! </h6>
+                                <h4>- Special Awards - Prize for Outstanding Involvement in the Arts </h4>
+                                <h6> This was judged by the school- they saw that I had taken music, art design, art printmaking and photography class, 
+                            <br>along with doing the orchestra, choir, string orchestra etc 
+                            <br>(as well as the contribution towards multiple music competitions)</h6>
+                                <h4>- Year 13 - Service Colours Music</h4>
+                                <h6> Once again, just like last year, it was another acknowledgement that I had taken contribution towards multiple musical groups.</h6>
+                                <h4>- Year 13 Subject Prize - First Place - Practical Art Printmaking</h4>
+                                <h6> Showed I was top of the class for printmaking!
+                            <br>They said I wouldve done the same in Music class but I had already gotten many trophies and awards for that.</h6>
+
+
+                        <button id="compete-button" class="compete-button">Competitions</button>
+                            <br>
+                        <button id="2020-button"  class="the-2020-button">2020</button>
+                                <h4>- Smokefree Rockquest - 1st Place Regionals / Solo </h4>
+                                <h6> This was my first year of competitions, I had just gotten my first electric guitar on my 16th and I had only started making songs (entered 2 weeks after) <br>
+                                     I got 1st place!! <br>
+                                     From this, I had gotten some further recognition and got asked to be interviewed and to give a live performance by a local Nelson radio station, The Breeze (I am seen on their facebook page).
+                            <br> https://www.facebook.com/watch/?v=3366371103413475 <br>
+                            <br> I also got on the Nelson Newspaper, got a website feature from Nelson Weekly, and I am featured on the wall of Nelsons, "The Rock Shop". 
+                            <br> https://nelsonweekly.co.nz/2020/07/solo-success-for-nelson-teen/ </h6>
+                        
+                        <button id="2021-button" class="the-2021-button">2021</button>
+                                <h4>- Smokefree Rockquest - 1st Place Regionals / Duo </h4>
+                                <h6>Second year doing competitions, I joined up with my friend and we named our duo, "MOTH - Malfunction of the Heart". <br>
+                                    We made our first song a week before we had to perform and miraculously, we got first place!! This was pretty exciting</h6>
+                        
+                        <button id="2022-button"  class="the-2022-button">2022</button>
+                                <h4>- Smokefree Rockquest - 1st Place Regionals / Solo </h4>
+                                <h6>Once again, third year in a row, I got first place! This was an online submission this time.</h6>
+                                <h4>- Take the Mic - Top 30 Finalist </h4>
+                                <h6>I put myself into another competition to get onto a TV show!! 
+                            <br>I only got into the Top 30, but this was still amazing because it was a national thing!! <br>
+                                So although I didn't get too far, I still got an email asking if I can still be featured on the TV show!! <br>
+                                So, on Take the Mic's first episode, I was the first person featured!! (Only for a minute.) </h6>
+                    
+                    </div>
+
+                <img src="images/break.png" class="break">
+                
+            <div class="icons-bottom">
+                <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+            </div>
+        </section>
+
+
+
+     
+
+                <!-- Section for my skill and projects -->
+        <section id="proj/skill">
+                <!-- Projects -->
+            <img src="images/projects.png"  class="pro-title">
+            <div class="top-page-text-explore">
+
+                <!-- MUSIC -->
+                <button id="music-button" class="music-button">Music</button>
+                    <div class="all-button-thing">
+                        <button id="all-button" onclick="showContent('music-page-all')" class="all-button">All</button>
+                    </div>
+                        <div class="content-skill">
+                            <img src="images/oiabm.png" onclick="showContent('oiabm')" class="pro-image1">
+                            <img src="images/altmp.png" onclick="showContent('altmp')" class="pro-image1">    
+                            <img src="images/lww.png" onclick="showContent('lww')" class="pro-image1">    
+                        </div>
+
+
+                <!-- ART -->
+                <button id="art-button"  class="art-button">Art</button>
+                    <div class="all-button-thing">
+                        <button id="all-button" onclick="showContent('art-page-all')" class="all-button">All</button>
+                    </div>
+                        <div class="content-skill">
+                            <img src="images/thejourney.png"  onclick="showContent('the-journey-art')" class="pro-image1">
+                            <img src="images/printed.png"  onclick="showContent('printed')" class="pro-image1">    
+                        </div>
+
+                    
+                <!-- PHOTOGRAPHY -->
+                <button id="photography-button"  class="photography-button">Photography</button>
+                    <div class="all-button-thing">
+                        <button id="all-button" onclick="showContent('pic-page-all')" class="all-button">All</button>
+                    </div>
+
+                        <div class="content-skill">
+                            <img src="images/study of the cello.png" onclick="showContent('studyofthecello')" class="pro-image1">   
+                            <img src="images/playingwithshadows.png" onclick="showContent('playingwithshadows')" class="pro-image1"> 
+                        </div>
+
+                
+                <!-- POETRY -->
+                <button id="poetry-button" class="poetry-button">Poetry</button>
+                    <div class="all-button-thing">
+                        <button id="all-button" onclick="showContent('poet-page-all')" class="all-button">All</button>
+                    </div>
+                    
+                </div>
+                
+                <div class="like-and-comment">
+                    <div class="text-box-public-project">
+                        <div class="text-box-like-project">
+                            <button class="like-button">
+                            </button>
+                        </div>
+                        <div class="text-box-comment-project">
+                                <div class="comment-list-box">
+                                    <br>
+                                    <div class="comment-list" id="commentList">
+                                        <div class="comments"></div>
+                                    </div>
+                                </div>
+                                
+
+
+                                <form id="commentForm">
+                                    <!-- <input type="text" id="username" name="username" placeholder="Add your full name here..." autocomplete="namex" required> -->
+                                    <textarea id="commentText" name="commentText" placeholder="Write your comment here..." required></textarea>
+                                    <button id="submit" class="commentSubmit" type="submit">Comment</button>
+                                </form>
+
+                                
+                            </div>
+                        </div>
+                    </div> 
+
+            <img src="bird/singleleft.png"  class="line-bird">
+            <br>
+
+            <!-- STUFF ABOUT SKILLS -->
+            <img src="images/skills.png"  class="skill-title">
+            <div class="skills">
+                <div class="top-page-text-edu"> 
+                                       
+                        <button id="2022-button" class="the-2022-button">Within the Arts </button>
+                            <h4>- Can play up to 7 instruments [Piano, Cello, Guitar, Bass, Ukelele, Harp + Vocal] </h4>
+                            <h4>- Gained an ABRSM Grade 2 exam result of Distinction for Cello in 2019 </h4>
+                            <h4>- Can create traditional and digital artwork </h4>
+                            <h4>- Can create original compositions </h4>
+                            <h4>- Has skills in sewing and crafting </h4>
+                            <h4>- Has been of assistance for a Nelson Junior Orchestra </h4>
+                            <h4>- Understanding of Music Programs such as Sibelius 7, Logic Pro X and Garageband </h4>
+                            <br>
+                            <br>
+
+
+                        <button id="2022-button" class="the-2022-button">In General </button>
+                            <h4>- Has some experience in Medical First Aid Training </h4>
+                            <h4>- Can assemble and disassemble a PC with efficiency </h4>
+                            <h4>- Understanding of UI Software such as Figma and Photoshop </h4>
+                            <h4>- Understanding of Digital Tech Programs such as Blender, Nomad, Unity and Visual Studio Code</h4>
+                            <h4>- Very new understanding of HTML, CSS and Javascript  </h4>
+
+                        
+                </div>
+            </div>
+            <img src="images/break.png" class="break-sm">
+    
+            
+            </div>
+        </div>
+        <div class="icons-bottom">
+            <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+            <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+            <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+        </div>
+        </section>
+
+
+        <!-- study of the cello photography -->
+        <section id="studyofthecello">
+            <div class="container">
+                <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+            </div>
+            <img src="images/sotc-i.PNG" class="print-title">
+
+            <div class="top-page-text-studycello">
+                <div class="top-page-text-studycello-sm">
+                    <h4>In this, I showcase images depicting the nature of the cello, envisioning it in architecture
+                         and how it interacts with shadow and light in its state.
+                </h4>
+                </div>
+
+                <div class="studycello-1">
+                   
+                    <div class="image-container">
+                        <img src="photo22/phsm1.JPG" class="sotc-image1">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello, Torch
+                            </button>
+                        </div>
+                    </div> 
+                    
+                    <div class="image-container">
+                        <img src="photo22/phsm2.jpg" class="sotc-image2">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello, Torch
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="photo22/phsm3.JPG" class="sotc-image3">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello, Torch
+                            </button>
+                        </div>
+                    </div>
+
+            </div>
+
+                <div class="studycello-2">
+
+                <div class="image-container">
+                    <img src="photo22/phbg4.JPG" class="sotc-image4">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Cello, Torch, Music Stand
+                        </button>
+                    </div>
+                </div>
+
+        
+                <div class="image-container">
+                    <img src="photo22/phbg5.JPG" class="sotc-image5">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Cello, Music Stand, Torch
+                        </button>
+                    </div>
+                </div>
+
+
+
+                <div class="studycello-3">
+
+                <div class="image-container">
+                    <img src="photo22/phsm-6.JPG" class="sotc-image6">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Cello
+                        </button>
+                    </div>
+                </div>
+
+                <div class="image-container">
+                    <img src="photo22/phsm-7.JPG" class="sotc-image7">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Cello, Torch
+                        </button>
+                    </div>
+                </div>
+
+                <div class="image-container">
+                    <img src="photo22/phsm-8.JPG" class="sotc-image8">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Cello
+                        </button>
+                    </div>
+                </div>
+           
+                
+                <div class="image-container">
+                    <img src="photo22/phsm-9.JPG" class="sotc-image9">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Cello
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="studycello-20">
+
+                <div class="image-container">
+                    <img src="pho2022/a1.JPG" class="sotc-image40">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Cello, Music Stand, Photoshop
+                        </button>
+                    </div>
+                </div>
+
+        
+                <div class="image-container">
+                    <img src="pho2022/a7.jpg" class="sotc-image50">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Cello, Music Stand, Photoshop
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>  
+    
+        </div>
+            <div class="icons-bottom">
+                <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+            </div>
+        </section>
+
+<!-- study of the cello photography -->
+<section id="playingwithshadows">
+    <div class="container">
+        <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+    </div>
+    <img src="images/playingwithshadows-i.PNG" class="print-title">
+
+    <div class="top-page-text-pws">
+        <div class="top-page-text-pws-sm">
+            <h4>In this, we visualise the use of other objects and their projection of shadows and how it interacts with the cello.
+        </h4>
+        </div>
+
+        <div class="studycello-1">
+           
+            <div class="image-container">
+                <img src="photo22/phs_1.jpg" class="sotc-image1">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Torch, Music Stand
+                    </button>
+                </div>
+            </div> 
+            
+            <div class="image-container">
+                <img src="photo22/phs_2.jpg" class="sotc-image2">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Torch, Music Stand
+                    </button>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="photo22/phs_3.JPG" class="sotc-image3">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Torch, Music Stand
+                    </button>
+                </div>
+            </div>
+
+    </div>
+
+        <div class="studycello-2">
+
+        <div class="image-container">
+            <img src="photo22/phb_4.JPG" class="sotc-image4">
+            <div class="image-overlay">
+                <button class="learn-more-button">
+                    - 2022
+                    <br>
+                    - Used: Camera, Music Stand, Torch
+                </button>
+            </div>
+        </div>
+
+
+        <div class="image-container">
+            <img src="photo22/phb_5.JPG" class="sotc-image5">
+            <div class="image-overlay">
+                <button class="learn-more-button">
+                    - 2022
+                    <br>
+                    - Used: Camera, Music Stand, Torch
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="studycello-3">
+
+        <div class="image-container">
+            <img src="photo22/phs_6.JPG" class="sotc-image6">
+            <div class="image-overlay">
+                <button class="learn-more-button">
+                    - 2022
+                    <br>
+                    - Used: Camera, Cello, Music Stand
+                </button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="photo22/phs_7.JPG" class="sotc-image7">
+            <div class="image-overlay">
+                <button class="learn-more-button">
+                    - 2022
+                    <br>
+                    - Used: Camera, Cello, Music Stand
+                </button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="photo22/phs_8.JPG" class="sotc-image8">
+            <div class="image-overlay">
+                <button class="learn-more-button">
+                    - 2022
+                    <br>
+                    - Used: Camera, Cello, Music Stand
+                </button>
+            </div>
+        </div>
+   
+        
+        <div class="image-container">
+            <img src="photo22/phs_9.JPG" class="sotc-image9">
+            <div class="image-overlay">
+                <button class="learn-more-button">
+                    - 2022
+                    <br>
+                    - Used: Camera, Cello, Music Stand
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</div>  
+
+</div>
+<div class="icons-bottom">
+    <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+    <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+    <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+</div>
+</section>
+                
+        <!-- THE JOURNEY ART -->
+            <section id="the-journey-art">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                </div>
+                <img src="images/thejourney-i.PNG" class="print-title">
+
+                <div class="top-page-text-journey-art">
+                    <div class="top-page-text-printed-sm">
+                        <h4>The theme of this portfolio encompasses the idea of 'coming out of your shell'. 
+                            <br> 
+                            We can see the girls' journey of breaking out of her comfort zone and becoming more comfortable with herself and the outside world.
+                            <br>
+                            In the story, we see that she feels unhealthily comfortable with herself, sheltering her from new opportunities. Once she breaks out of her shell, she is able to see her life in a new light.
+                    </h4>
+                    </div>
+                    <div class="journ-1">
+                       
+                        <div class="image-container">
+                            <img src="ads2022/ads1.png" class="journey-image1">
+                            <div class="image-overlay">
+                                <button class="learn-more-button">
+                                    - 2022
+                                    <br>
+                                    - Digital Art / Procreate
+                                    <br>
+                                    - Used: IPad Pro 11, Apple Pencil
+                                </button>
+                            </div>
+                        </div> 
+                        
+                        <div class="image-container">
+                            <img src="ads2022/ads2.png" class="journey-image2">
+                            <div class="image-overlay">
+                                <button class="learn-more-button">
+                                    - 2022
+                                    <br>
+                                    - Digital Art / Procreate
+                                    <br>
+                                    - Used: IPad Pro 11, Apple Pencil
+                                </button>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="journ-2">
+
+            
+                    <div class="image-container">
+                        <img src="ads2022/ads3.png" class="journey-image3">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Digital Art / Procreate
+                                <br>
+                                - Used: IPad Pro 11, Apple Pencil
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="ads2022/ads4.png" class="journey-image4">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Digital Art / Procreate
+                                <br>
+                                - Used: IPad Pro 11, Apple Pencil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="journ-3">
+
+            
+                    <div class="image-container">
+                        <img src="ads2022/ads5.png" class="journey-image5">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Digital Art / Procreate
+                                <br>
+                                - Used: IPad Pro 11, Apple Pencil
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="ads2022/ads6.png" class="journey-image6">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Digital Art / Procreate
+                                <br>
+                                - Used: IPad Pro 11, Apple Pencil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journ-4">
+
+                    <div class="image-container">
+                        <img src="ads2022/ads7.png" class="journey-image7">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Digital Art / Procreate
+                                <br>
+                                - Used: IPad Pro 11, Apple Pencil
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="ads2022/ads8.png" class="journey-image8">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Digital Art / Procreate
+                                <br>
+                                - Used: IPad Pro 11, Apple Pencil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                    
+                 
+                    <div class="journ-5">
+
+                    <div class="image-container">
+                        <img src="ads2022/ads9.png" class="journey-image9">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Digital Art / Procreate
+                                <br>
+                                - Used: IPad Pro 11, Apple Pencil
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="ads2022/ads10.png" class="journey-image10">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Digital Art / Procreate
+                                <br>
+                                - Used: IPad Pro 11, Apple Pencil
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>  
+        
+        </div>
+        <div class="icons-bottom">
+            <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+            <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+            <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+        </div>
+</section>
+
+        <!-- PRINTED ARTWORK -->
+            <section id="printed">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                </div>
+                <img src="images/print.png" class="print-title">
+
+                <div class="top-page-text-printed">
+                    <div class="top-page-text-printed-sm">
+                        <h4>Compositionally, the theme of this is directed towards vulnerability and demise.
+                            <br> The state of demise is a soft state that is often underlooked or shunned upon, however its important to realise the inevitablity of it.
+                        <br>
+                        Conveying this idea towards birds show a more compositionally inclined message as the idea of birds face their sense of survival everyday.
+                    <br>
+                    <br>
+                    </h4>
+                    </div>
+                    <div class="print">
+                            <div class="print-1">
+                               
+                                <div class="image-container">
+                                    <img src="print2022/lay.png" class="printed-image1">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                            <br>
+                                            - Traditional Art // Collage
+                                            <br>
+                                            - Used: Natural Colour Paper, String, Black Ink, White Printed Paper
+                                        </button>
+                                    </div>
+                                </div> 
+                                
+                                <div class="image-container">
+                                    <img src="print2022/swirlnest.PNG" class="printed-image2">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                            <br>
+                                            - Digital Art / Procreate
+                                            <br>
+                                            - Used: IPad Pro 11, Apple Pencil
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="image-container">
+                                    <img src="print2022/collage.PNG" class="printed-image3">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                            <br>
+                                            - Traditional Art
+                                            <br>
+                                            - Used: White paper, Art pencil
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="print-2">
+
+                            <div class="image-container">
+                                <img src="print2022/treepaper.png" class="printed-image4">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                            <br>
+                                            - Digital Art / Procreate
+                                            <br>
+                                            - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="image-container">
+                                <img src="print2022/bird_nest (1).png" class="printed-image5">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Traditional Art
+                                        <br>
+                                        - Used: White paper, Art pencil
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="image-container">
+                                <img src="print2022/birdclock.png" class="printed-image6">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                            <br>
+                                        - Digital Art / Procreate
+                                            <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                        </div>
+                        </div>
+
+                        <div class="print-3">
+
+                            <div class="image-container">
+                                <img src="print2022/bird_nest.png" class="printed-image7">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                            <br>
+                                        - Traditional Art
+                                            <br>
+                                        - Used: Thin paper, Black oil pastel, Plastic sheet
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="image-container">
+                                <img src="print2022/cage.png" class="printed-image8">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                            <br>
+                                        - Digital Art / Procreate
+                                            <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="image-container">
+                                <img src="print2022/clock.png" class="printed-image9">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                            <br>
+                                        - Digital Art / Procreate
+                                            <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>  
+                
+                </div>
+                <div class="icons-bottom">
+                    <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                    <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                    <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+                </div>
+    </section>
+
+
+
+        <!-- MUSIC - A LETTER TO MY PAST -->
+            <section id="altmp">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                </div>
+                <div class="audio-box-altmp">
+                    <button id="music-button" class="smallish-button">A Letter to my Past</button>
+                    <div class="container-alettertothepast-altmp">
+                        <img src="images/Forever_Young.png" class="image-thoughts">
+                        <p>This is an EP. 
+                            <br> Here, theres a small range from compositional creations to digital instrumentation..</p>
+                            <br>
+                            Of course, these are only samples of what are featured. 
+                            <br>
+                            <br>
+                                <strong>More coming out soon!</strong></p>
+                                <br>
+                        <!-- THE SONG THING 1-->
+                        <p><strong>The Journey</strong>
+                            <br><small>Designed in 2022 by <i>Jinksy Crow</i></small>
+                        </p>
+                        <div class="butfile">
+                            <a href="#the-journey-song" onclick="showContent('thejourney')"><img src="images/leftright.png" alt="the-journey-song" class="image-musicbutton" id="leftright-button"></a>
+                            <audio controls>
+                                <source src="music/The Journey.m4a" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <!-- THE SONG THING 3-->
+                        <p>Chrysalis
+                            <br><small>Designed in 2022 by <i>Jinksy Crow</i></small>
+                        </p>
+                        <div class = "butfile">
+                            <a href="#chrysalis-song" onclick="showContent('chrysalis')"><img src="images/leftright.png" alt="chrysalis-song" class="image-musicbutton" id="leftright-button"></a>
+                            <audio controls>
+                                <source src="music/Chrysalis .m4a" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="icons-bottom">
+                <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+            </div>
+            </section>
+
+
+            <!-- MUSIC - ONCE IN A BLUE MOON -->
+            <section id="oiabm">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                </div>
+                <div class="audio-box-oiabm">
+                    <button id="music-button" class="smallish-button">Once in a Blue Moon</button>
+                    <div class="container-bluemoon-oiabm">
+                        <img src="images/bluemoon.jpg" class="image-bluemoon">
+                        <p>This is an EP created throughout a couple years. 
+                            <br> The assortment ranges from compositional creations to digital instrumentation.
+                        <br>
+                            Of course, these are only samples of what are featured. 
+                        <br>
+                        <br>
+                            <strong>More coming out soon!</strong></p>
+                            <br>
+                        <!-- THE SONG THING 1-->
+                        <p><strong>Memories of Time</strong><br><small>Designed in 2022 by <i>Jinksy Crow</i></small></p>
+                        <div class="butfile">
+                            <a href="#memories-of-time-song" onclick="showContent('memoriesoftime')"><img src="images/leftright.png" alt="memories-of-time-song" class="image-musicbutton" id="leftright-button"></a>
+                            <audio controls>
+                                <source src="music/memories of time .mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+
+                        <!-- THE SONG THING 2-->
+                        <p>Dusk
+                            <br><small>Designed in 2021 by <i>Jinksy Crow</i></small>
+                        </p>
+                        <div class="butfile">
+                            <a href="#dusk-song" onclick="showContent('dusk')"><img src="images/leftright.png" alt="dusk-song" class="image-musicbutton" id="leftright-button"></a>
+                            <audio controls>
+                                <source src="music/Dusk.m4a" type="audio/mpeg">
+                            </audio>
+                        </div> 
+                       
+                    </div>
+                </div>
+                <div class="icons-bottom">
+                    <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                    <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                    <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+                </div>
+            </section>
+
+            <!-- MUSIC - LIFE WITHOUT WORDS -->
+            <section id="lww">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                </div>
+                <div class="audio-box-lww">
+                    <button id="music-button" class="smallish-button">Life Without Words</button>
+                    <div class="container-alettertothepast-lww">
+                        <img src="images/Life_Without_Words.png" class="image-thoughts">
+                        <p>This is an EP. 
+                            <br> The assortment ranges from compositional creations to digital instrumentation.</p>
+                            <br>
+                            Of course, these are only samples of what are featured. 
+                            <br>
+                            <br>
+                                <strong>More coming out soon!</strong>
+                        <!-- THE SONG THING 1-->
+                        <p>Taking a Toll
+                            <br><small>Designed in 2022 by <i>Jinksy Crow</i></small>
+                        </p>
+                        <div class="butfile">
+                            <a href="#taking-a-toll-song" onclick="showContent('takingatoll')"><img src="images/leftright.png" alt="taking-a-toll-song" class="image-musicbutton" id="leftright-button"></a>
+                            <audio controls>
+                                <source src="music/taking a toll 2.m4a" type="audio/mpeg">
+                            </audio>
+                            </div>
+                    </div>
+                </div>    
+                <div class="icons-bottom">
+                    <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                    <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                    <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+                </div>
+            </section>
+
+            
+
+
+              <!-- THE PHOTOGRAPHY PAGE-->
+              
+
+            <section id="pic-page-all">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                </div>
+                <div class="pic-page-all">
+                    <img src="images/picture.png" class="big-title-pic">
+                    <br>
+                </div>
+
+            
+                <img src="images/sotc-i.PNG" class="print-title">
+
+
+            <div class="top-page-text-studycello">
+                <div class="top-page-text-studycello-sm">
+                    <h4>In this, I showcase images depicting the nature of the cello, envisioning it in architecture and how it interacts with shadow and light in its state.
+                </h4>
+                </div>
+                <div class="stud">
+
+                    <div class="studycello-1">
+                   
+                        <div class="image-container">
+                            <img src="photo22/phsm1.JPG" class="sotc-image1">
+                            <div class="image-overlay">
+                                <button class="learn-more-button">
+                                    - 2022
+                                    <br>
+                                    - Used: Camera, Cello, Torch
+                                </button>
+                            </div>
+                        </div> 
+                        
+                        <div class="image-container">
+                            <img src="photo22/phsm2.jpg" class="sotc-image2">
+                            <div class="image-overlay">
+                                <button class="learn-more-button">
+                                    - 2022
+                                    <br>
+                                    - Used: Camera, Cello, Torch
+                                </button>
+                            </div>
+                        </div>
+    
+                        <div class="image-container">
+                            <img src="photo22/phsm3.JPG" class="sotc-image3">
+                            <div class="image-overlay">
+                                <button class="learn-more-button">
+                                    - 2022
+                                    <br>
+                                    - Used: Camera, Cello, Torch
+                                </button>
+                            </div>
+                        </div>
+    
+                </div>
+    
+                    <div class="studycello-2">
+    
+                    <div class="image-container">
+                        <img src="photo22/phbg4.JPG" class="sotc-image4">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello, Torch, Music Stand
+                            </button>
+                        </div>
+                    </div>
+    
+            
+                    <div class="image-container">
+                        <img src="photo22/phbg5.JPG" class="sotc-image5">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello, Music Stand, Torch
+                            </button>
+                        </div>
+                    </div>
+    
+    
+    
+                    <div class="studycello-3">
+    
+                    <div class="image-container">
+                        <img src="photo22/phsm-6.JPG" class="sotc-image6">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello
+                            </button>
+                        </div>
+                    </div>
+    
+                    <div class="image-container">
+                        <img src="photo22/phsm-7.JPG" class="sotc-image7">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello, Torch
+                            </button>
+                        </div>
+                    </div>
+    
+                    <div class="image-container">
+                        <img src="photo22/phsm-8.JPG" class="sotc-image8">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello
+                            </button>
+                        </div>
+                    </div>
+               
+                    
+                    <div class="image-container">
+                        <img src="photo22/phsm-9.JPG" class="sotc-image9">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="studycello-20">
+    
+                    <div class="image-container">
+                        <img src="pho2022/a1.JPG" class="sotc-image40">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello, Music Stand, Photoshop
+                            </button>
+                        </div>
+                    </div>
+    
+            
+                    <div class="image-container">
+                        <img src="pho2022/a7.jpg" class="sotc-image50">
+                        <div class="image-overlay">
+                            <button class="learn-more-button">
+                                - 2022
+                                <br>
+                                - Used: Camera, Cello, Music Stand, Photoshop
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>  
+    </div>
+
+
+        <img src="images/break.png" class="break-sm">
+
+        <img src="images/playingwithshadows-i.PNG" class="print-title-pws ">
+
+    <div class="top-page-text-pws">
+        <div class="top-page-text-pws-sm">
+            <h4>In this, we visualise the use of other objects and their projection of shadows and how it interacts with the cello.
+        </h4>
+        </div>
+
+        <div class="studc">
+            <div class="studycello-1">
+           
+                <div class="image-container">
+                    <img src="photo22/phs_1.jpg" class="sotc-image1">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Torch, Music Stand
+                        </button>
+                    </div>
+                </div> 
+                
+                <div class="image-container">
+                    <img src="photo22/phs_2.jpg" class="sotc-image2">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Torch, Music Stand
+                        </button>
+                    </div>
+                </div>
+    
+                <div class="image-container">
+                    <img src="photo22/phs_3.JPG" class="sotc-image3">
+                    <div class="image-overlay">
+                        <button class="learn-more-button">
+                            - 2022
+                            <br>
+                            - Used: Camera, Torch, Music Stand
+                        </button>
+                    </div>
+                </div>
+    
+        </div>
+    
+            <div class="studycello-2">
+    
+            <div class="image-container">
+                <img src="photo22/phb_4.JPG" class="sotc-image4">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Music Stand, Torch
+                    </button>
+                </div>
+            </div>
+    
+    
+            <div class="image-container">
+                <img src="photo22/phb_5.JPG" class="sotc-image5">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Music Stand, Torch
+                    </button>
+                </div>
+            </div>
+    
+    
+    
+            <div class="studycello-3">
+    
+            <div class="image-container">
+                <img src="photo22/phs_6.JPG" class="sotc-image6">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Cello, Music Stand
+                    </button>
+                </div>
+            </div>
+    
+            <div class="image-container">
+                <img src="photo22/phs_7.JPG" class="sotc-image7">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Cello, Music Stand
+                    </button>
+                </div>
+            </div>
+    
+            <div class="image-container">
+                <img src="photo22/phs_8.JPG" class="sotc-image8">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Cello, Music Stand
+                    </button>
+                </div>
+            </div>
+       
+            
+            <div class="image-container">
+                <img src="photo22/phs_9.JPG" class="sotc-image9">
+                <div class="image-overlay">
+                    <button class="learn-more-button">
+                        - 2022
+                        <br>
+                        - Used: Camera, Cello, Music Stand
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="icons-bottom">
+        <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+        <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+        <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+    </div>
+            </section>
+
+            <!-- POETRY PAGE -->
+            <section id="poet-page-all">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+
+                    <div class="poet-page-all">
+                        <img src="images/poetry.png" class="big-title-poet">
+                        <div class="top-page-text-poet">
+                            <br>
+                            <p>
+                                <button id="music-button" class="small-button">By Your Side</button>
+                                <br>
+                            <br>
+                            Every moon, I had waited for a presence like yours;
+                                <br>
+                            For you are the stars that light up the devoid of eternity.
+                                <br>
+                                There came a day where the suns rays fell into its routine and became blurred within the path of your presence;
+                                <br>
+                                As you are the light that outshone the sun.
+                                <br>
+                                <br>
+                                I am grateful;
+                                <br>
+                                As I am part of this reincarnation of this universe
+                                <br>
+                                That fell in place where I am with you
+                                <br>
+                                <br>
+                                Of all the lives I could've lived
+                                <br>
+                                Out of all the possibilities
+                                <br>
+                                You fell within my lines of chance
+                                <br>
+                                Holding me as I take every waking breath.
+                                <br>
+                                <br>
+                                Even with that slowing probability that every rise could be my last fall 
+                                <br>
+                                I choose to spend it all with you; knowing my last thought is about a masterpiece of creation.
+                                <br>
+                                <br>
+                                As I intertwine my fingers with yours
+                                <br>
+                                Connect the dots and entertwine my pathways with yours
+                                <br>
+                                With every door that opened
+                                <br>
+                                Every opportunity that closed
+                                <br>
+                                We crossed over and met in an eclipse
+                                <br>
+                                In perfect serenity and serendipity
+                                <br>
+                                <br>
+                                <br>
+                                So while time is going at once, I live it through
+                                <br>
+                                And I am glad it is spent staying by your side with you.
+                                <br>
+                                    <br>
+                                    <br>
+                                    <small>2023</small>
+                            </p>
+                            </div>
+                            <div class="top-page-text-poet">
+                                <br>
+                            
+                                <p>
+                                    <button id="music-button" class="small-button">What do you see in me?</button>
+                                    <br>
+                                <br>
+                                    What do you see in me?
+                                    <br>
+                                    In you, I see a world of possibilities
+                                    <br>
+                                    I see a tapestry woven from the stars
+                                    <br>
+                                    I glimpse upon the constellations in your veins,
+                                    <br>
+                                    The galaxies painted within your eyes.
+                                    <br>
+                                    <br>
+                                    You're the refreshing dawn, breathing life into every corner you touch.
+                                    <br>
+                                    But what am I?
+                                    <br>
+                                    <br>
+                                    As I stand in your shadow, you radiate like the sun, illuminating my world.
+                                    <br>
+                                    I am the tranquil darkness, mirroring the moon's glow above. 
+                                    <br>
+                                    You, the stars that sprinkle the fabric of the night, awakening fascination in life's obscurity.
+                                    <br>
+                                    You are the very air I breathe, the very essence of my being.
+                                    <br>
+                                    <br>
+                                    Though we are opposite, this duality we embody is what makes us whole.
+                                    <br>
+                                    Just as yin finds its match in yang, and light twirls in step with shadow
+                                    <br>
+                                    Our souls shall merge in syncrony. 
+                                    <br>
+                                    We can mirror the warmth of the sun, and the calm of the moon.
+                                    <br>
+                                    We can be the stars that light up the night, and the darkness that soothes the day.
+                                    <br>
+                                    <br>
+                                    As you are the euphoric reverie that I can't help but fall into.
+                                    <br>
+                                    The veil of mystery that I can't help but unravel.
+                                    <br>
+                                    The guilded aurora, emboldened by stardust and moonlight.
+                                    <br>
+                                    <br>
+                                    I know exactly what I see in you.. but what reflection takes shape in your gaze when it falls upon me?
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <small>2022</small>
+                                </p>
+                            </div>
+                            <div class="top-page-text-poet">
+                                <br>
+                                
+                                <p>
+                                    <button id="music-button" class="small-button">The Journey</button>
+                                    <br>
+                                <br>
+                                    In the dark space of my mind
+                                    A place with no concept of time 
+                                    <br>       my apathy,
+                                    <br>        worn over me like a veil,
+                                    sheltering me from life and bright colours
+                                    <br>
+                                    <br>
+                                    The light of daybreak behind closed shelter 
+                                            Thin shelled enclosure
+                                            The armour that divide us
+                                    It's rays try to reach inside 
+                                    Try to spread my wings and lift me up outside
+                                    <br>
+                                    <br>
+                                    With the desperate attempts to enter my mind
+                                    I take a deep breath and let it happen
+                                    I soften my strained emotions
+                                        I let my vulnerability breathe
+                                    <br>
+                                    <br>
+                                    Golden rays stream through the cracks of my frame, announcing its welcome return
+                                    It's glowing complexion brings light to the dark 
+                                    <br>
+                                    And threads of gold entwine in my soul  
+                                    <br>
+                                    <br>
+                                    The warmth pulls me up from the nest that formed around me 
+                                    The home with a hollowed out husk
+                                    Unshelled from the weeks of being in fetal position
+                                    <br> Protected
+                                    <br>
+                                    <br>
+                                    I part ways with my part self
+                                    I rise to my state of rebirth
+                                    And I open the windows to the world outside
+                                    <br>
+                                    <br>
+                                    A breath of fresh air restoring my lungs
+                                    Airing out built-up dust inside to feel clearer and young.
+                                    <br>
+                                    <br>
+                                    I look with new eyes
+                                    Directing light through my gaze
+                                        casting optimism 
+                                    seeing things from a different angle.
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <small>2022</small>
+                                </p>
+                                <button id="poet-journey-button" onclick="showContent('the-journey-art')" class="poet-journey-button">See "The Journey" Artworks with this Poetry</button>
+
+                                </div>
+                    </div>
+                </div>
+                <div class="icons-bottom">
+                    <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                    <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                    <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+                </div>
+            </section>
+
+
+            <!-- THE MUSIC PAGE-->
+            <section id="music-page-all">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                </div>
+                <div class="music-page-all">
+                    
+                    <img src="images/music.png" class="big-title-music">
+                    <div class="displayflexmusic-all">
+                    <div class="audio-box">
+                        <button id="music-button" class="smallerish-button">Once in a Blue Moon</button>
+                        <div class="container-bluemoon">
+                            <img src="images/bluemoon.jpg" class="image-bluemoon">
+                            <p>This is an EP created throughout a couple years. 
+                                <br> The assortment ranges from compositional creations to digital instrumentation.</p>
+                                <br>
+                            <!-- THE SONG THING 1-->
+                            <p>Memories of Time<br><small>Designed in 2022 by <i>Jinksy Crow</i></small></p>
+                            <div class="butfile">
+                                <a href="#memories-of-time-song" onclick="showContent('memoriesoftime')"><img src="images/leftright.png" alt="memories-of-time-song" class="image-musicbutton" id="leftright-button"></a>
+                                <audio controls>
+                                    <source src="music/memories of time .mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+
+                            <!-- THE SONG THING 2-->
+                            <p>Dusk
+                                <br><small>Designed in 2021 by <i>Jinksy Crow</i></small>
+                            </p>
+                            <div class="butfile">
+                                <a href="#dusk-song" onclick="showContent('dusk')"><img src="images/leftright.png" alt="dusk-song" class="image-musicbutton" id="leftright-button"></a>
+                                <audio controls>
+                                    <source src="music/Dusk.m4a" type="audio/mpeg">
+                                </audio>
+                            </div> 
+                           
+                        </div>
+                    </div>
+                    <div class="audio-box">
+                        <button id="music-button" class="smallerish-button">A Letter to my Past</button>
+                        <div class="container-alettertothepast">
+                            <img src="images/Forever_Young.png" class="image-thoughts">
+                            <p>This is an EP. 
+                                <br> The assortment ranges from compositional creations to digital instrumentation.</p>
+                                <br>
+                            <!-- THE SONG THING 1-->
+                            <p>The Journey
+                                <br><small>Designed in 2022 by <i>Jinksy Crow</i></small>
+                            </p>
+                            <div class="butfile">
+                                <a href="#the-journey-song" onclick="showContent('thejourney')"><img src="images/leftright.png" alt="the-journey-song" class="image-musicbutton" id="leftright-button"></a>
+                                <audio controls>
+                                    <source src="music/The Journey.m4a" type="audio/mpeg">
+                                </audio>
+                            </div>
+                            <!-- THE SONG THING 3-->
+                            <p>Chrysalis
+                                <br><small>Designed in 2022 by <i>Jinksy Crow</i></small>
+                            </p>
+                            <div class = "butfile">
+                                <a href="#chrysalis-song" onclick="showContent('chrysalis')"><img src="images/leftright.png" alt="chrysalis-song" class="image-musicbutton" id="leftright-button"></a>
+                                <audio controls>
+                                    <source src="music/Chrysalis .m4a" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-box">
+                    <button id="music-button" class="smallerish-button">Life Without Words</button>
+                    <div class="container-alettertothepast">
+                        <img src="images/Life_Without_Words.png" class="image-thoughts">
+                        <p>This is an EP. 
+                            <br> The assortment ranges from compositional creations to digital instrumentation.</p>
+                            <br>
+                        <!-- THE SONG THING 1-->
+                        <p>Taking a Toll
+                            <br><small>Designed in 2022 by <i>Jinksy Crow</i></small>
+                        </p>
+                        <div class="butfile">
+                            <a href="#taking-a-toll-song" onclick="showContent('takingatoll')"><img src="images/leftright.png" alt="taking-a-toll-song" class="image-musicbutton" id="leftright-button"></a>
+                            <audio controls>
+                                <source src="music/taking a toll 2.m4a" type="audio/mpeg">
+                            </audio>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="icons-bottom">
+                    <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                    <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                    <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+                </div>
+            </section>
+
+
+
+            <section id="memoriesoftime">
+                <div class="mot-song">
+                    <a href="#back" onclick="showContent('music-page-all')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                    <div class="top-page-text-mot">
+                        <button id="music-button" class="small-button">Memories of Time</button>
+ 
+                        <div class="audio-like-container">
+                            
+                                    <audio controls>
+                                        <source src="music/memories of time .mp3" type="audio/mpeg">
+                                    </audio>
+                        </div>
+                        <div class="top-page-text-desc">
+                            <h4>This song is about bittersweet reminisce of the past. 
+                                <br>This is about remembering the times with someone that has moved on when you havent- knowing that one day theyre bound to go, but scared of it becoming a reality.
+                                <br> Understanding that nothing lasts forever,, so you should enjoy the time you have with them while you can. 
+                            </h4>
+                        </div>  
+                                    
+                               
+                            </div>
+                        <div class="top-page-text-lyric">
+                            <h4><u>Lyrics:</u></h4>
+                            <h4>Verse I:</h4>
+                            <h5>You're moving forward, but I am staying behind
+                                <br>
+                                Hold onto the memory that I know has passed.
+                                <br>
+                                Not able to go back in time to have better things to say.. to feel the same way.
+                                <br>
+                            <h4>Pre-chorus:</h4>
+                                <h5>In this hour, in this minute.. in this second, in this day
+                                <br>
+                                I wont forget the memories we had... while we had the light in our eyes
+                                
+                            <h4>Chorus:</h4>
+                                <h5>I was afraid.. that in due time
+                                <br>
+                                That our connection would loosen- the ties will be frayed.
+                                <br>
+                                The fact that our eyes wont open- our breath cant be retained...
+                                <br>
+                                But to exist isn't merely to die- it's to live and to live is to try and be alive...
+                                <br>
+                                So please.. hold me my love. x2
+                                
+                            <h4>Verse II:</h4>
+                                <h5>You're moving forward, but I am staying behind
+                                <br> 
+                                Not over the way I feel- running out of time.
+                                <br>
+                                Wanting to hold back, wanting to stay here..
+                                <br>
+                                In the past thats.. passed.
+                                <h4>Chorus:</h4>
+                                <h5>I was afraid.. that in due time
+                                <br>
+                                That our connection would loosen- the ties will be frayed.
+                                <br>
+                                The fact that our eyes wont open- our breath cant be retained...
+                                <br>
+                                But to exist isn't merely to die- it's to live and to live is to try and be alive...
+                                <br>
+                                So please.. hold me my love. x2
+                                
+                            <h4>Bridge:</h4>
+                                <h5>The numbers of our lives only exist to go up
+                                <br>
+                                But our time goes down with it
+                                <br>
+                                Sentience is futile since it is limited
+                                <br>
+                                But we're given what we deserve
+                                
+                            <h4>Pre-chorus:</h4>
+                                <h5>In this hour, in this minute.. in this second, in this day
+                                <br>
+                                I wont forget the memories we had... while we had the light in our eyes
+                                <br>
+                            </h5>
+                        </div>  
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="dusk">
+                <div class="dusk-song">
+                    <a href="#back" onclick="showContent('music-page-all')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                    <div class="top-page-text-mot">
+                        <button id="music-button" class="small-button">Dusk</button>
+
+                        <div class="audio-like-container">
+                            
+                            <audio controls>
+                                <source src="music/Dusk.m4a" type="audio/mpeg">
+                            </audio>
+                </div>
+                        <div class="top-page-text-desc">
+                            <h4>Dusk is about performing. Before I perform, I always feel anxious and feel worried I would mess up or embarrass myself. 
+                                <br>
+                                Though as I go, I learn that the audience shouldn't be seen as a scary thing but rather a comforting thing.
+                                <br>
+                                I talk about thunder because I am actually afraid of thunderstorms; however, in this case, I am using the way I feel about thunder as the way I feel about crowds.
+                                <br>
+                                I am afraid of crowds, but I am also excited to perform for them. Sometimes it's a rush; it shows power, growth, intensity. 
+                                <br>
+                                So even though the crowd is daunting, it makes me feel alive and real.
+                                <br>
+                                I mention how the audience claps' are like thunder. There's been times I had been in an echoey room and hearing the rolling of applaud is like the rolling of thunder.
+                                <br>
+                                As well as this, I mention a lot about rain; usually rain coming is seen as a bad thing; and how I use that thought is towards the relation of my thoughts,, building up any otherthinking feelings
+                                <br>
+                                When in actual fact, I remember that rain makes me happy.
+
+                                <br>
+                                So, Dusk is about the relation between us and nature; its a symbol of renewal, our feelings are valid, we are not alone.
+
+                            </h4>
+                    </div>  
+                                    
+                               
+                            </div>
+                        <div class="top-page-text-lyric">
+                            <h4><u>Lyrics:</u></h4>
+                            <h4>Verse I:</h4>
+                            <h5>As much as I get so nervous.. 
+                                <br>
+                                To make a mistake of myself..
+                                <br> 
+                                The rain seems to always be there
+                                <br>
+                                When I take my first step.
+                                <br>
+                                <br>
+                                <h4>Verse II:</h4>
+                            <h5>Rainclouds of emotion
+                                <br>
+                                It's frightning- but exciting..
+                                <br>
+                                The rush gives a sense of life
+                                <br>
+                                A breathing motion...
+                            </h5>
+                            <h4>Chorus:</h4>
+                                <h5>The sound of thunder
+                                    <br>
+                                    As I say my words
+                                    <br>
+                                    Come and they go
+                                    <br>
+                                    Only if im heard...
+                                    <br> 
+                                    The sounds I play as 'Jinksy Crow'
+                                    <br>
+                                    ...its night time, its my time
+                                    <br>
+                                    I'm here to perform all
+                                    <br>
+                                    At dusk.. oh dusk, it is mine.
+                                
+                            <h4>Verse III:</h4>
+                                <h5> Serenades of melody 
+                                    <br>
+                                    Portrayed into motion and played to the rain..
+                                    <br>
+                                    The sound of thunder is here...
+                                    <br>
+                                    The rain and claps gives me comfort..
+                                    <h4>Verse IV:</h4>
+                                <h5>Rainclouds of emotion
+                                <br>
+                                It's frightning- but exciting..
+                                <br>
+                                The rush gives a sense of life
+                                <br>
+                                A breathing motion...
+                                </h5>
+                            <h4>Chorus:</h4>
+                            <h5>The sound of thunder
+                                <br>
+                                As I say my words
+                                <br>
+                                Come and they go
+                                <br>
+                                Only if im heard...
+                                <br> 
+                                The sounds I play as 'Jinksy Crow'
+                                <br>
+                                ...its night time, its my time
+                                <br>
+                                I'm here to perform all
+                                <br>
+                                At dusk.. oh dusk, it is mine.
+                                
+                            <h4>Bridge:</h4>
+                                <h5>It all sounds loud.. perhaps im overwhelmed
+                                    <br>
+                                    Just play to the clouds,, my emotion in my hands and words...
+                                    <br>
+                                    ...its night time, its my time
+                                    <br>
+                                    I'm here to perform all
+                                    <br>
+                                    At dusk.. oh dusk, it is mine.. 'cuz I play as 'Jinksy Crow'.
+                        </div>  
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section id="thejourney">
+                    <div class="the-journey-song">
+                    <a href="#back" onclick="showContent('music-page-all')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                    <div class="top-page-text-mot">
+                        <button id="music-button" class="small-button">The Journey</button>
+
+                        <div class="audio-like-container">
+                            
+                            <audio controls>
+                                <source src="music/The Journey.m4a" type="audio/mpeg">
+                            </audio>
+                </div>
+                <div class="top-page-text-desc">
+                    <h4>This song is based on 'The Journey' Art and Poetry.
+                    </h4>
+                </div>  
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="chrysalis">
+                <div class="chrysalis-song">
+                    <a href="#back" onclick="showContent('music-page-all')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                    <div class="top-page-text-mot">
+                        <button id="music-button" class="small-button">Chrysalis</button>
+
+                        <div class="audio-like-container">
+                            
+                            <audio controls>
+                                <source src="music/Chrysalis .m4a" type="audio/mpeg">
+                            </audio>
+                </div>
+                <div class="top-page-text-desc">
+                    <h4>This song is based on 'The Journey' Art and Poetry.
+                    </h4>
+        </div>  
+        </div>
+        <div class="top-page-text-lyric">
+            <h4><u>Lyrics:</u></h4>
+            <h4>Verse I:</h4>
+            <h5>A new identity
+                <br>
+                Will rise beyond what used to be
+                <br>
+                Crawl out from the metal carcass
+                <br>
+                Leave behind the time.. that used to have the old me
+                <br>
+                <h4>Verse II:</h4>
+            <h5>Fall into the new light
+                <br>
+                Out of the darkness within 
+                <br>
+                Find yourself a purpose
+                <br>
+                Let your life begin
+            </h5>
+            <h4>Verse III:</h4>
+                <h5> An unborn entity
+                    <br>
+                    One only dreamed of
+                    <br> 
+                    Thoughts beyond any matter
+                    <br> 
+                    As we dive into a new chapter
+                    <h4>Verse IV:</h4>
+                <h5>The new me knew the old me
+                    <br>
+                    Understood it wasn't meant to be
+                    <br>
+                    I had to leave the weighted past behind
+                    <br>
+                    Grow new wings and learn to fly
+                </h5>
+        </div>  
+    </div>
+    </div>
+            </section>
+
+
+            <section id="takingatoll">
+                <div class="taking-a-toll-song">
+                <a href="#back" onclick="showContent('music-page-all')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                <div class="top-page-text-mot">
+                    <button id="music-button" class="small-button">Taking a Toll</button>
+
+                    <div class="audio-like-container">
+                        
+                        <audio controls>
+                            <source src="music/taking a toll 2.m4a" type="audio/mpeg">
+                        </audio>
+            </div>
+            <div class="top-page-text-desc">
+                <h4>This song is about overwhelming yourself,, not knowing your limits till its too late
+                </h4>
+            </div>  
+                </div>
+                </div>
+            </div>
+        </section>
+
+            
+
+            <section id="art-page-all">
+                <div class="container">
+                    <a href="#back" onclick="showContent('proj/skill')"><img src="images/mainback.png" alt="back" class="image-back"></a>
+                </div>
+                
+                    <div class="art-page-all">
+                        <img src="images/artist.png" class="big-title-art">
+    
+                    </div>
+                     
+                    
+                        <img src="images/thejourney-i.PNG" class="print-title-artall">
+        
+                        <div class="top-page-text-journey-art">
+                            <div class="top-page-text-printed-sm">
+                                <h4>The theme of this portfolio encompasses the idea of 'coming out of your shell'. 
+                                    <br> 
+                                    We can see the girls' journey of breaking out of their comfort zone and becoming more comfortable with themselves and the outside world.
+                                    <br>
+                                    In the story, we see that she feels unhealthily comfortable with herself, sheltering her from new opportunities. Once she breaks out of her shell, she is able to see her life in a new light.
+                            </h4>
+                            </div>
+                            <div class="journ-1">
+                               
+                                <div class="image-container">
+                                    <img src="ads2022/ads1.png" class="journey-image1">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                            <br>
+                                            - Digital Art / Procreate
+                                            <br>
+                                            - Used: IPad Pro 11, Apple Pencil
+                                        </button>
+                                    </div>
+                                </div> 
+                                
+                                <div class="image-container">
+                                    <img src="ads2022/ads2.png" class="journey-image2">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                            <br>
+                                            - Digital Art / Procreate
+                                            <br>
+                                            - Used: IPad Pro 11, Apple Pencil
+                                        </button>
+                                    </div>
+                                </div>
+                        </div>
+        
+                        <div class="journ-2">
+        
+                    
+                            <div class="image-container">
+                                <img src="ads2022/ads3.png" class="journey-image3">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Digital Art / Procreate
+                                        <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+        
+                            <div class="image-container">
+                                <img src="ads2022/ads4.png" class="journey-image4">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Digital Art / Procreate
+                                        <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                        <div class="journ-3">
+        
+                    
+                            <div class="image-container">
+                                <img src="ads2022/ads5.png" class="journey-image5">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Digital Art / Procreate
+                                        <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+        
+                            <div class="image-container">
+                                <img src="ads2022/ads6.png" class="journey-image6">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Digital Art / Procreate
+                                        <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="journ-4">
+        
+                            <div class="image-container">
+                                <img src="ads2022/ads7.png" class="journey-image7">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Digital Art / Procreate
+                                        <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+        
+                            <div class="image-container">
+                                <img src="ads2022/ads8.png" class="journey-image8">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Digital Art / Procreate
+                                        <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                            
+                         
+                            <div class="journ-5">
+        
+                            <div class="image-container">
+                                <img src="ads2022/ads9.png" class="journey-image9">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Digital Art / Procreate
+                                        <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+        
+                            <div class="image-container">
+                                <img src="ads2022/ads10.png" class="journey-image10">
+                                <div class="image-overlay">
+                                    <button class="learn-more-button">
+                                        - 2022
+                                        <br>
+                                        - Digital Art / Procreate
+                                        <br>
+                                        - Used: IPad Pro 11, Apple Pencil
+                                    </button>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>  
+                
+                </div>
+            
+
+                <img src="images/break.png" class="break">
+
+                
+                    <img src="images/print.png" class="print-title">
+    
+                    <div class="top-page-text-printed">
+                        <div class="top-page-text-printed-sm">
+                            <h4>Compositionally, the theme of this is directed towards vulnerability and demise.
+                                <br> The state of demise is a soft state that is often underlooked or shunned upon, however its important to realise the inevitablity of it.
+                            <br>
+                            Conveying this idea towards birds show a more compositionally inclined message as the idea of birds face their sense of survival everyday.
+                        <br>
+                        <br>
+                        </h4>
+                        </div>
+                        <div class="print">
+                                <div class="print-1">
+                                   
+                                    <div class="image-container">
+                                        <img src="print2022/lay.png" class="printed-image1">
+                                        <div class="image-overlay">
+                                            <button class="learn-more-button">
+                                                - 2022
+                                                <br>
+                                                - Traditional Art // Collage
+                                                <br>
+                                                - Used: Natural Colour Paper, String, Black Ink, White Printed Paper
+                                            </button>
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="image-container">
+                                        <img src="print2022/swirlnest.PNG" class="printed-image2">
+                                        <div class="image-overlay">
+                                            <button class="learn-more-button">
+                                                - 2022
+                                                <br>
+                                                - Digital Art / Procreate
+                                                <br>
+                                                - Used: IPad Pro 11, Apple Pencil
+                                            </button>
+                                        </div>
+                                    </div>
+    
+                                    <div class="image-container">
+                                        <img src="print2022/collage.PNG" class="printed-image3">
+                                        <div class="image-overlay">
+                                            <button class="learn-more-button">
+                                                - 2022
+                                                <br>
+                                                - Traditional Art
+                                                <br>
+                                                - Used: White paper, Art pencil
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            <div class="print-2">
+    
+                                <div class="image-container">
+                                    <img src="print2022/treepaper.png" class="printed-image4">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                                <br>
+                                                - Digital Art / Procreate
+                                                <br>
+                                                - Used: IPad Pro 11, Apple Pencil
+                                        </button>
+                                    </div>
+                                </div>
+    
+                                <div class="image-container">
+                                    <img src="print2022/bird_nest (1).png" class="printed-image5">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                            <br>
+                                            - Traditional Art
+                                            <br>
+                                            - Used: White paper, Art pencil
+                                        </button>
+                                    </div>
+                                </div>
+    
+                                <div class="image-container">
+                                    <img src="print2022/birdclock.png" class="printed-image6">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                                <br>
+                                            - Digital Art / Procreate
+                                                <br>
+                                            - Used: IPad Pro 11, Apple Pencil
+                                        </button>
+                                    </div>
+                            </div>
+                            </div>
+    
+                            <div class="print-3">
+    
+                                <div class="image-container">
+                                    <img src="print2022/bird_nest.png" class="printed-image7">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                                <br>
+                                            - Traditional Art
+                                                <br>
+                                            - Used: Thin paper, Black oil pastel, Plastic sheet
+                                        </button>
+                                    </div>
+                                </div>
+    
+                                <div class="image-container">
+                                    <img src="print2022/cage.png" class="printed-image8">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                                <br>
+                                            - Digital Art / Procreate
+                                                <br>
+                                            - Used: IPad Pro 11, Apple Pencil
+                                        </button>
+                                    </div>
+                                </div>
+    
+                                <div class="image-container">
+                                    <img src="print2022/clock.png" class="printed-image9">
+                                    <div class="image-overlay">
+                                        <button class="learn-more-button">
+                                            - 2022
+                                                <br>
+                                            - Digital Art / Procreate
+                                                <br>
+                                            - Used: IPad Pro 11, Apple Pencil
+                                        </button>
+                                    </div>
+                                </div>
+                             
+                            </div>
+                        </div>  
+                    
+                    </div>
+                
+                    <div class="icons-bottom">
+                        <a href="https://www.instagram.com/jinksy7/" target="_blank"><img src="images/insta.png" alt="Instagram"></a></li>
+                        <a href="https://www.linkedin.com/in/lee-vartha-b07b65267/" target="_blank"><img src="images/link.png" alt="linkedin"></a>
+                        <a href="https://github.com/lee-vartha" target="_blank"><img src="images/git.png" alt="github"></a>    
+                    </div>
+                </section>
+
+                
+
+            <footer>
+                <p>&copy; 2023 Lee Vartha.</p>
+            </footer>
+
+    </main>
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js"></script>
+        
+
+
+    <!-- fix the forward slashing stuff- modules are not linked properly-->
+    <script type="module" src="./fire.js"></script>
+    <script src="./index.js"></script>
+    
+    </body>
+</html>
