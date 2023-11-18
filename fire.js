@@ -220,8 +220,8 @@ document.getElementById('commentForm').addEventListener('submit', async (e) => {
     } else { // if it didnt work or theyre not signed in, then the following will happen:
       console.error('User was not logged in'); // the inspect console log will show this message (only seen by developer)
       alert('Sorry, you must be logged in to be able to post a comment! ... '); // the user sees that they arent logged in
-      alert('... Sending you to the register/login page ...'); // they are then sent to the register page to sign up or sign in
-      showContent('sign-up'); // it takes them to the register page
+      alert('... Sending you to the login page ...'); // they are then sent to the register page to sign up or sign in
+      showContent('sign-in'); // it takes them to the register page
     }
   } catch (error) { // if there is a general error, then the following will happen:
     console.error('An error with posting comment: ', error); // the inspect console log will show this message (only seen by developer)
