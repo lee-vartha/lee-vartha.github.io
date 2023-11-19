@@ -22,7 +22,6 @@ import {
     serverTimestamp,
     
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js"; // imports SDKs for anything related to firestore database
-import { getAnalytics } from "firebase/analytics";
 
 // Firebase configuration, which is helpful:
 
@@ -41,7 +40,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig); // means that firebase is initialized
 const auth = getAuth(app); // means that the authentication is initialized
 const firestore = getFirestore(app); // means that the firestore database is initialized
-const analytics = getAnalytics(app);
 
 
 const uploadingBar = document.getElementById('uploadingBar');
