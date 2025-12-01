@@ -118,7 +118,7 @@ span {
 
 /* button image */
 .image-buttonstring {
-   margin-left: 390px;
+   margin-left: 360px;
     margin-top: 10px;
     padding-left: 0px;
     max-width: 800px;
@@ -364,7 +364,7 @@ nav.active {
 
 /*SECTION: SEARCH BAR */
 .search {
-    margin-left: 390px;
+    margin-left: 350px;
     margin-top: -65px;
     width: 800px;
 }
@@ -1333,7 +1333,7 @@ input [type='email'], select {
 .top-page-text-main-sm {
     padding: 30px;
     margin-left: 130px;
-    margin-top: -350px;
+    margin-top: -400px;
     
     @media (max-width: 320px) {
         
@@ -2325,10 +2325,10 @@ textarea {
 
 .portrait-aboutme {
     
-    width: 300px;
+    width: 270px;
     opacity: 85%;
-    margin-left: 365px;
-    margin-top: -130px;
+    margin-left: 305px;
+    margin-top: -90px;
     border-radius: 10px;
 
     @media (max-width: 320px) {
