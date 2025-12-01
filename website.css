@@ -1333,7 +1333,7 @@ input [type='email'], select {
 .top-page-text-main-sm {
     padding: 30px;
     margin-left: 130px;
-    margin-top: -400px;
+    margin-top: -380px;
     
     @media (max-width: 320px) {
         
@@ -2329,6 +2329,22 @@ textarea {
     opacity: 85%;
     margin-left: 305px;
     margin-top: -90px;
+    border-radius: 10px;
+
+    @media (max-width: 320px) {
+        width: 160px;
+        margin-left: 9px;
+        margin-top: 100px;
+        
+    }
+}
+
+.portrait-aboutme-main {
+    
+    width: 150px;
+    opacity: 85%;
+    margin-left: 420px;
+    margin-top: -150px;
     border-radius: 10px;
 
     @media (max-width: 320px) {
