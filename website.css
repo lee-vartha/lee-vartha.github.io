@@ -31,7 +31,7 @@ gets rid of browser-specific styles */
 
 /* this is for the top header! */
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Coming Soon', cursive;
     font-size: 0.875em;
 
     margin: 0;
@@ -260,7 +260,7 @@ nav {
     transition: transform 0.5s var(--timing-function);
     margin-top: 5rem;
     max-height: 120vh;
-    box-shadow: 10px 0 5px -2px #888;
+    overflow: hidden;
 
     
 
@@ -278,6 +278,8 @@ nav {
         will-change: transform;
         transition: transform 0.5s var(--timing-function);
         height: 900px;
+        transform: translateX(-100%);
+
 
         @media(min-width: 700px) {
             width: 0var(--nav-width-desktop);
@@ -295,6 +297,11 @@ nav {
             color: black;
         }
     }
+}
+
+
+nav.active {
+    transform: translateX(0);
 }
 
 
@@ -1326,7 +1333,7 @@ input [type='email'], select {
 .top-page-text-main-sm {
     padding: 30px;
     margin-left: 130px;
-    margin-top: -280px;
+    margin-top: -350px;
     
     @media (max-width: 320px) {
         
@@ -2337,7 +2344,7 @@ textarea {
     width: 300px;
     opacity: 85%;
     margin-left: 250px;
-    margin-top: -290px;
+    margin-top: -420px;
     border-radius: 10px;
 
     @media (max-width: 320px) {
@@ -2352,9 +2359,12 @@ textarea {
 
 /* the icons used for the social media links */
 .icons {
-    margin-top: -70px;
-    margin-left: 590px;
+    margin-top: -90px;
+    margin-left: 470px;
     opacity: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 
     
 }
